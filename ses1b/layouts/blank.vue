@@ -1,10 +1,5 @@
 <template>
   <div>
-    <at-menu mode="horizontal" active-name="1">
-      <at-menu-item name="1" to='/homepage'><i class="icon icon-home"></i>Homepage</at-menu-item>
-      <at-menu-item name="2" disabled><i class="icon icon-layers"></i>Navigation Two</at-menu-item>
-      <at-menu-item name="3" to="/message"><i class="icon icon-settings"></i>Message</at-menu-item>
-    </at-menu>
     <nuxt/>
   </div>
 </template>

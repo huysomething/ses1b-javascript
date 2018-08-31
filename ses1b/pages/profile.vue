@@ -1,10 +1,17 @@
 <template>
 <section class="container">
-<at-progress :percent="percent" class="bar"></at-progress>
-<at-button-group size="small" class="links" >
-  <at-button @click="descPercent"><i class="icon icon-chevron-left"></i></at-button>
-  <at-button @click="inscPercent"><i class="icon icon-chevron-right"></i></at-button>
-</at-button-group>
+<at-steps :current='current'>
+  <at-step title="Step1" description="This is a description."></at-step>
+  <at-step title="Step2" description="This is a description."></at-step>
+  <at-step title="Step3"></at-step>
+</at-steps>
+
+<at-button type="primary" @click="previousStep()" style="margin-top: 12px;">Prev</at-button>
+<at-button type="primary" @click="nextStep()" style="margin-top: 12px;">Next</at-button>
+
+<nuxt-link to="/homepage"> 
+        <at-button size="large"  >Home</at-button>
+</nuxt-link>
 
 </section>
 </template>
@@ -13,12 +20,14 @@
 import AppLogo from '~/components/AppLogo.vue'
 
 export default {
+  layout: 'blank',
       components: {
     AppLogo
   },
 data () {
       return {
-        percent: 0
+        percent: 0,
+        current: 0
       }
     },
     methods: {
@@ -29,6 +38,12 @@ data () {
       inscPercent () {
         this.percent += 10
         this.percent = this.percent > 100 ? 100 : this.percent
+      },
+      nextStep() {
+        if(this.current < 2) this.current++
+      },
+      previousStep() {
+        if(this.current >0) this.current--
       }
     }
 
@@ -45,19 +60,6 @@ data () {
 
 .bar {
 padding-top: 400px
-}
-
-.textContainer {
-padding-top: 10px
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 30px;
-  color: #35495e;
-  letter-spacing: 1px;
 }
 
 

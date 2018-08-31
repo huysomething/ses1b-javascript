@@ -14,9 +14,9 @@
         <at-input v-model="password" type="password" placeholder="Password"></at-input>
         </section>
       <div class="links">
-        <router-link to="/profile"> 
+        <nuxt-link to="/profile"> 
         <at-button size="large"  >Login</at-button>
-        </router-link>
+        </nuxt-link>
       </div>
     </div>
     
@@ -27,13 +27,14 @@
 import AppLogo from '~/components/AppLogo.vue'
 
 export default {
+  layout: 'blank',
   components: {
     AppLogo
   }
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   min-height: 70vh;
   display: flex;
