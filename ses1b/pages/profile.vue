@@ -1,14 +1,12 @@
 <template>
-<div class="container">
-
-
-
+<section class="container">
 <at-progress :percent="percent" class="bar"></at-progress>
 <at-button-group size="small" class="links" >
   <at-button @click="descPercent"><i class="icon icon-chevron-left"></i></at-button>
   <at-button @click="inscPercent"><i class="icon icon-chevron-right"></i></at-button>
 </at-button-group>
-</div>
+
+</section>
 </template>
 
 <script>
@@ -37,9 +35,8 @@ data () {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
-  min-height: 70vh;
   display: 100px; 
   justify-content: center;
   align-items: center;
