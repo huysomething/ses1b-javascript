@@ -16,6 +16,9 @@ module.exports = {
   plugins: [
     { src: '~/plugins/at-ui', ssr: false }
   ],
+  modules: [
+    '@nuxtjs/pwa',
+  ],
   /*
   ** Customize the progress bar color
   */
